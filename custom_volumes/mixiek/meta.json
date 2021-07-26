@@ -1,0 +1,22 @@
+{
+    "package_id": "mixiek",
+    "volumes": [
+        {
+            "volume_id": "mixiek",
+            "title": "{hemocolor=gray}Volume 1, Episode 1{/hemocolor}",
+            "subtitle": "{hemocolor=gold}\"volume one,, or $ome $hit,\"{/hemocolor}",
+            "author": "jnats",
+            "warnings": "foo bar"
+        }
+    ],
+    "achievements": [
+        {
+            "id_suffix": "mixiekwin",
+            "img_locked": "ach_no.png",
+            "img_unlocked": "ach_yes.png",
+            "name": "the good,, ending,",
+            "desc": "Maybe this planet won't be so bad after all.",
+            "hint": "Befriend the loneliest guy on Nebros."
+        }
+    ]
+}
