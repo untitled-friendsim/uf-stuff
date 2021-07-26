@@ -27,7 +27,7 @@ define config.developer = True
 ## This generally should not be changed, and if it is, should always be a
 ## literal string, not an expression.
 
-define config.save_directory = "Friendsim"
+define config.save_directory = "untitledFriendsim"
 
 
 ## A short name for the game used for executables and directories in the built

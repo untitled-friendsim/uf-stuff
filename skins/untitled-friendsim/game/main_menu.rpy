@@ -12,7 +12,7 @@ label splashscreen:
 # Main menu for default liteskin
 # Offset = 2 to override SYS overrides
 
-image menu_background = "gui/game_menu.png"
+image menu_background = "gui/main_menu.png"
 define config.main_menu_music = "music/main_menu.mp3"
 
 define splashtext = [
