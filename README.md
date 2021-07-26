@@ -11,7 +11,7 @@ to "compile":
 to run:
 
 - `make renpy`
-- preferences -> set "Projects Directory" to fansim-engine/projects
+- preferences -> set "Projects Directory" to `fansim-engine/projects`
 - launch the game named "work"
 
 ---
