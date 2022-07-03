@@ -42,8 +42,8 @@ def copy():
     os.system("git reset --hard HEAD")
     os.chdir(path)
     
-    vol_path = "fansim-engine/custom_volumes"
-    art_path = "fansim-engine/skins"
+    vol_path = "./fansim-engine/custom_volumes/"
+    art_path = "./fansim-engine/skins/"
     
     for vol in os.listdir(vol_path):
         shutil.copytree(vol, vol_path)
@@ -55,7 +55,7 @@ def copy():
 def build():
     path = os.getcwd()
     
-    os.chdir("fansim-engine/src")
+    os.chdir("./fansim-engine/src")
     os.system("python3 run_wizard.py --clean")
     os.chdir(path)
 
@@ -63,7 +63,7 @@ def build():
 
 def run():
     renpy_path = "renpy-{}-sdk".format(renpy_ver)
-    os.system("python3 {}/renpy.sh fansim-engine/projects/work")
+    os.system("python3 ./{}/renpy.sh fansim-engine/projects/work")
 
 
 def main():
