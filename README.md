@@ -2,6 +2,7 @@
 
 ### Dependencies:
 - Python 3.10
+  - Wget Pip Module
 - Git
 
 ### Clone Instructions:
