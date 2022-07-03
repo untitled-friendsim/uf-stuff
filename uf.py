@@ -49,17 +49,17 @@ def copy():
     art_path = "./fansim-engine/skins/"
     
     for vol in os.scandir("{}/custom_volumes".format(path)):
-        shutil.copytree(vol, vol_path + str(vol))
+        shutil.copytree(vol, vol_path + vol.name)
     
     for art in os.scandir("{}/skins".format(path)):
-        shutil.copytree(art, art_path + str(art))
+        shutil.copytree(art, art_path + art.name)
 
 
 def build():
     path = os.getcwd()
     
     os.chdir("./fansim-engine/src")
-    os.system("python run_wizard.py --clean")
+    os.system("python run_wizard.py --clean --skins untitled-friendsim")
     os.chdir(path)
 
 
