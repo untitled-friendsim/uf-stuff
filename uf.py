@@ -6,7 +6,7 @@ import sys
 import wget
 import zipfile
 
-renpy_ver = "8.0.0"
+renpy_ver = "7.5.0"
 
 def init():
     os.system('git submodule update --init --recursive --progress')
@@ -38,50 +38,54 @@ def get_sdk():
 def copy():
     path = os.getcwd()
     
+    print(path)
+    
     os.chdir("fansim-engine")
     os.system("git reset --hard HEAD")
+    os.system("git clean -dfx")
     os.chdir(path)
     
     vol_path = "./fansim-engine/custom_volumes/"
     art_path = "./fansim-engine/skins/"
     
-    for vol in os.listdir(vol_path):
-        shutil.copytree(vol, vol_path)
+    for vol in os.scandir("{}/custom_volumes".format(path)):
+        shutil.copytree(vol, vol_path + str(vol))
     
-    for art in os.listdir(art_path):
-        shutil.copytree(art, art_path)    
+    for art in os.scandir("{}/skins".format(path)):
+        shutil.copytree(art, art_path + str(art))
 
 
 def build():
     path = os.getcwd()
     
     os.chdir("./fansim-engine/src")
-    os.system("python3 run_wizard.py --clean")
+    os.system("python run_wizard.py --clean")
     os.chdir(path)
 
 
 
 def run():
     renpy_path = "renpy-{}-sdk".format(renpy_ver)
-    os.system("python3 ./{}/renpy.sh fansim-engine/projects/work")
+    os.system("{}/renpy.sh fansim-engine/projects/work".format(renpy_path))
 
 
 def main():
     arg = sys.argv[1]
     
-    match arg:
-        case 'init':
-            init()
-            update()
-            get_sdk()
-        case 'update':
-            update()
-        case 'copy':
-            copy()
-        case 'build':
-            build()
-        case 'run':
-            run()
+    if arg == 'init':
+        init()
+        update()
+        get_sdk()
+    elif arg == 'update':
+        update()
+    elif arg == 'copy':
+        copy()
+    elif arg == 'build':
+        build()
+    elif arg == 'run':
+        run()
+    else:
+        pass
 
 
 if __name__ == '__main__':
