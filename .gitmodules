@@ -1,0 +1,6 @@
+[submodule "fansim-engine"]
+	path = fansim-engine
+	url = https://github.com/giovanh/fansim-engine
+[submodule "renpy"]
+	path = renpy
+	url = https://github.com/renpy/renpy
